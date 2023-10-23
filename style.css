@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&family=Roboto:ital,wght@1,100&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&family=Playfair+Display:ital,wght@1,600&family=Roboto:ital,wght@1,100&display=swap');
+
+
+.center {
+    padding: 70px 0;
+    text-align: center;
+  }
+nav{
+    background-color:rgb(251, 255, 0);
+    color: rgb(5, 35, 9);
+    height:50px;
+    font-size:30px;
+    padding: 0 10px;
+   
+    font-family: 'Playfair Display', serif;
+}
+nav ul{
+    list-style-type: none;
+    text-align: center;
+}
+  
+  
+  
+.gameContainer{
+   
+    margin-top: 50px;
+    display:flex;
+    justify-content: center;
+    
+}
+.container{
+    display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #e8eaf4;
+  padding: 2px;
+}
+
+.box{
+  background-color: rgb(253, 254, 255);
+    border: 2px solid rgba(182, 58, 58, 0.8);
+    padding: 50px;
+    font-size: 30px;
+    text-align: center;
+    
+}
+.box:hover{
+   background-color: rgb(224, 209, 239);
+}
+.gameInfo{
+    padding: 0 50px;
+    font-family: 'Josefin Sans', sans-serif;
+
+}
+.br-0{
+  border-right: 0;
+}
+.bl-0{
+  border-left: 0;
+}
+.bt-0{
+  border-top: 0;
+}
+.bb-0{
+  border-bottom: 0;
+}
+#reset{
+    margin:  0 23px; 
+    padding: 6px 14px ;
+    background:rgb(180, 231, 218);
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+}
