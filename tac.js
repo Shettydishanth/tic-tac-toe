@@ -21,7 +21,9 @@ const checkWin = ()=>{
     ]
     wins.forEach(e =>{
      if((boxtext[e[0]].innerText === boxtext[e[1]].innerText) && (boxtext[e[2]].innerText ===boxtext[e[1]].innerText) && (boxtext[e[0]].innerText !=="" )){
-        document.querySelector('.info').innerText = boxtext[e[0]].innerText + "won"
+        let info = document.querySelector('.info')
+        info.innerHTML = boxtext[e[0]].innerText + " won"
+        info.classList.add('success')
         gameover = true
      } 
     })
@@ -32,7 +34,7 @@ let boxes = document.getElementsByClassName("box");
 Array.from(boxes).forEach(element =>{
     let boxtext = element.querySelector('.boxtext');
     element.addEventListener('click',()=>{
-        if(boxtext.innerText ===''){
+        if(boxtext.innerText ==='' && !gameover){
             boxtext.innerText = turn;
             turn = changeTurn();
             checkWin();
@@ -43,16 +45,21 @@ Array.from(boxes).forEach(element =>{
           
            
         }
+        else if(gameover){
+            resetGame()
+        }
     })
 })
+
+const resetGame = ()=>{
+        document.querySelector('.info').classList.remove('success')
+        let boxtext = document.querySelectorAll('.boxtext');
+        Array.from(boxtext).forEach(element =>{
+            element.innerText = " "
+        });
+        turn ="X";
+        gameover = false
+        document.getElementsByClassName("info")[0].innerText = "Turn for " + turn;
+}
 //evrythng must become reset(first ethleka avare rest malpunu)
-reset.addEventListener('click', ()=>{
-    let boxtext = document.querySelectorAll('.boxtext');
-    Array.from(boxtext).forEach(element =>{
-        element.innerText = " "
-    });
-    turn ="X";
-    isgameover = false
-    document.getElementsByClassName("info")[0].innerText = "Turn for" + turn;
-    
-})
+reset.addEventListener('click', resetGame)

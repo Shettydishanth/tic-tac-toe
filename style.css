@@ -72,3 +72,7 @@ nav ul{
     cursor: pointer;
     font-family: 'Times New Roman', Times, serif;
 }
+
+.info.success{
+  color:rgb(27, 148, 27);
+}
